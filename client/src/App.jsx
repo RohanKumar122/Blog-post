@@ -10,7 +10,7 @@ function App() {
   const [users, setUsers] = useState([])
 
   useEffect(() =>{
-    axios.get('https://blog-post-v2qr.vercel.app/getUsers')
+    axios.get('https://blog-post-snowy-seven.vercel.app//getUsers')
     .then(users=>setUsers(users.data))
     .catch(err=>console.log(err))
 
