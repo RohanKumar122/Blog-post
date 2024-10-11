@@ -15,6 +15,10 @@ app.get('/getUsers', (req, res) => {
     .catch(err => res.status(400).json('Error:'+ err));
 });
 
+app.get('/data', (req, res) => {
+    return res.json({service: "Running"})
+});
+
 
 app.listen(3001,() => {
     console.log('Server is running on port 3001')
