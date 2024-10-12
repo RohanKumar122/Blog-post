@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() =>{
     // axios.get('https://blog-post-snowy-seven.vercel.app//getUsers')
-    axios.get('http://localhost:3001/getUsers')
+    axios.get('https://blog-post-nine-gamma.vercel.app/getUsers')
     .then(users=>setUsers(users.data))
     .catch(err=>console.log(err))
 
