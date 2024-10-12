@@ -3,11 +3,14 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const Usermodel = require('./models/Users')
 
+require('dotenv').config();
+const MONGO_URI=process.env.MONGO_URI;
+
 const app = express()
 app.use(cors()) 
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://rk399504:RqUsjKF0kvlIQmfy@blog-app.nqyjm.mongodb.net/?retryWrites=true&w=majority&appName=Blog-app/test')
+mongoose.connect(MONGO_URI)
 
 app.get('/getUsers', (req, res) => {
     Usermodel.find()
@@ -15,7 +18,7 @@ app.get('/getUsers', (req, res) => {
     .catch(err => res.status(400).json('Error:'+ err));
 });
 
-app.get('/data', (req, res) => {
+app.get('/', (req, res) => {
     return res.json({service: "Running"})
 });
 
