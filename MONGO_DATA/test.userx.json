@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6708946d1a58367b0a149695"
+  },
+  "name": "Rohan Kumar",
+  "email": "rohan@email.com",
+  "age": 23
+},
+{
+  "_id": {
+    "$oid": "670894bb1a58367b0a149696"
+  },
+  "name": "Vinay",
+  "email": "vinay@email.com",
+  "age": 26
+},
+{
+  "_id": {
+    "$oid": "670894db1a58367b0a149697"
+  },
+  "name": "Ramesh Prajapati",
+  "email": "ramesh@email.com",
+  "age": 10
+}]

@@ -1,16 +1,15 @@
 import { useState,useEffect } from 'react'
-import './App.css'
+import '../App.css'
 import axios from 'axios'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
-
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 function App() {
   const [users, setUsers] = useState([])
 
   useEffect(() =>{
-    axios.get('https://blog-post-snowy-seven.vercel.app//getUsers')
+    // axios.get('https://blog-post-snowy-seven.vercel.app//getUsers')
+    axios.get('http://localhost:3001/getUsers')
     .then(users=>setUsers(users.data))
     .catch(err=>console.log(err))
 
