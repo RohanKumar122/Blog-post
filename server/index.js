@@ -7,8 +7,8 @@ const app = express()
 app.use(cors()) 
 app.use(express.json())
 
-// mongoose.connect('mongodb+srv://emseccomandcenter:TUXnEN09VNM1drh3@cluster0.psiqanw.mongodb.net/?retryWrites=true&w=majority/test')
-mongoose.connect('mongodb+srv://rk399504:RqUsjKF0kvlIQmfy@blog-app.nqyjm.mongodb.net/?retryWrites=true&w=majority&appName=Blog-app/test')
+mongoose.connect('mongodb+srv://emseccomandcenter:TUXnEN09VNM1drh3@cluster0.psiqanw.mongodb.net/?retryWrites=true&w=majority/test')
+// mongoose.connect('mongodb+srv://rk399504:RqUsjKF0kvlIQmfy@blog-app.nqyjm.mongodb.net/?retryWrites=true&w=majority&appName=Blog-app/test')
 
 app.get('/getUsers', (req, res) => {
     Usermodel.find()
