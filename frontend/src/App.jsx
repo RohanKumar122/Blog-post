@@ -8,7 +8,8 @@ function App() {
   useEffect(() => {
     // axios.get('https://blog-backend-opal-nine.vercel.app/getUsers')
     axios
-      .get("http://localhost:3001/getUsers")
+      .get("https://blog-backend-opal-nine.vercel.app/getUsers/")
+      // .get("http://localhost:3001/getUsers")
       .then((users) => setUsers(users.data))
       .catch((err) => console.log(err));
   });
