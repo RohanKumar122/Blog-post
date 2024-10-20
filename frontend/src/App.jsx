@@ -14,23 +14,23 @@ function App() {
       .catch((err) => console.log(err));
   });
 return (
-<div class="w-full h-full font-serif">
-    <div class="my-5 mx-40 text-2xl ">
-      <tbody class="my-8 mx-8">
+<div class="w-full h-full  font-mono">
+    <div class="my-8 mx-40 text-lg  ">
+      <tbody class="my-8 mx-8 ">
         {users.map((user) => (
-          <tr class="flex my-6 items-start space-x-6 ">
+          <tr class="my-6 items-start py-8 space-x-4 hover:border-green-600 ">
             {/* IMAGE */}
-            <td key={user.id} class="w-1/3">
+            <td key={user.id} class="w-96  my-8">
               <img
-                class="border-green-600   w-full object-cover border-2 rounded-md"
+                class="hover:border-green-600 w-full h-full object-cover border-2 rounded-md"
                 src={user.image}
                 alt=""
               />
             </td>
             {/* HEADING + PARA container */}
-            <div class="flex flex-col space-y-4">
+            <div class="flex flex-col  my-8 ">
               {/* HEADING */}
-              <td class="font-bold  text-white" key={user.id}>
+              <td class="font-bold  text-white " key={user.id}>
                 {user.heading}
               </td>
               {/* para */}
@@ -43,6 +43,7 @@ return (
           </tr>
         ))}
       </tbody>
+  
     </div>
   </div>
 );
