@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { Link } from "react-router-dom";
+import calender from "./assets/images/calender.png";
 
 function App() {
 
@@ -41,7 +42,10 @@ function App() {
                     : user.para}
                 </p>
 
-              <div className="text-gray-200 justify-end flex text-xs ">
+              <div className="text-gray-200 justify-end flex text-xs ">{
+                  <img className="w-4 h-4 mx-2" src={calender} alt="" />
+              
+                }
                 {new Date(user.publishedAt).toLocaleDateString('en-GB', {
                   day: '2-digit',
                   month: 'short',
