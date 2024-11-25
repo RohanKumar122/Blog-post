@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 function App() {
+
+  const clickHandler = () => {
+    <Link to="/pending"></Link>
+  }
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -13,41 +19,55 @@ function App() {
       .then((users) => setUsers(users.data))
       .catch((err) => console.log(err));
   });
-return (
-<div class="w-full h-full  font-mono">
-    <div class="my-8 mx-40 text-lg  ">
-      <tbody class="my-8 mx-8 ">
-        {users.map((user) => (
-          <tr class="my-6 items-start py-8 space-x-4 hover:border-green-600 ">
-            {/* IMAGE */}
-            <td key={user.id} class="w-96  my-8">
+  return (
+    <div className="w-full h-full font-mono  ">
+      <div className="my-4 mx-4 flex flex-col  ">
+        <div className="flex flex-wrap w-full h-full items-start  py-3 justify-center   rounded-md">
+          {users.map((user) => (
+            <div
+              key={user.id}
+              className="w-full sm:w-full md:w-1/2  lg:w-1/4 lg:m-4 lg:mx-3  p-4 mx-3 my-2 justify-center border-2 border-slate-600 rounded-lg"
+            >
               <img
-                class="hover:border-green-600 w-full h-full object-cover border-2 rounded-md"
+                className="hover:border-green-600 border-2 rounded-md w- h-auto"
                 src={user.image}
                 alt=""
               />
-            </td>
-            {/* HEADING + PARA container */}
-            <div class="flex flex-col  my-8 ">
-              {/* HEADING */}
-              <td class="font-bold  text-white " key={user.id}>
-                {user.heading}
-              </td>
-              {/* para */}
-              <td class="text-gray-400" key={user.id}>
-                {user.para.length > 20
-                  ? `${user.para.substring(0, 230)}...`
-                  : user.para}
-              </td>
-            </div>
-          </tr>
-        ))}
-      </tbody>
-  
-    </div>
-  </div>
-);
+              <div className="flex flex-col my-4">
+                <h2 className="font-bold text-white font-sans text-2xl ">{user.heading}</h2>
+                <p className="text-gray-400 my-3">
+                  {user.para.length > 40
+                    ? `${user.para.substring(0, 110)}...`
+                    : user.para}
+                </p>
 
+              <div className="text-gray-200 justify-end flex text-xs ">
+                {new Date(user.publishedAt).toLocaleDateString('en-GB', {
+                  day: '2-digit',
+                  month: 'short',
+                  year: 'numeric'
+                }).replace(/ /g, '-')}
+                {/* {user.publishedAt } */}
+              </div>
+
+                <hr className="my-3"></hr>
+
+                <div className="flex justify-end">
+                  <Link to='/pending'>
+                  <button className="bg-green-600 justify-end  px-3 py-2 rounded-md text-white" onClick={clickHandler}>
+                    Read More
+                  </button>
+                  </Link>
+                </div>
+                
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+  
 }
 
 export default App;
