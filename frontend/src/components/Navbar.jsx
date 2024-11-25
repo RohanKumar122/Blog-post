@@ -20,9 +20,9 @@ const Navbar = () => {
       <div className="hidden md:flex ">
         <ul className="flex space-x-5 md:space-x-10 lg:space-x-12 xl:space-x-16">
           <Link to='/'><li className=" hover:text-green-500  cursor-pointer">Home</li></Link>
-          <Link to='/about'><li className="hover:text-green-500 cursor-pointer">About</li></Link>
-          <Link to='/'><li className="hover:text-green-500 cursor-pointer">Blog</li></Link>
-          <Link to='/contact'><li className="hover:text-green-500 cursor-pointer">ContactUs</li></Link>
+          <Link to='/pending'><li className="hover:text-green-500 cursor-pointer">About</li></Link>
+          <Link to='/pending'><li className="hover:text-green-500 cursor-pointer">Blog</li></Link>
+          <Link to='/pending'><li className="hover:text-green-500 cursor-pointer">ContactUs</li></Link>
         </ul>
       </div>
 
@@ -54,9 +54,9 @@ const Navbar = () => {
         <div className="absolute top-full left-0 w-full bg-gray-900 text-white shadow-md md:hidden">
           <ul className="flex flex-col space-y-4 p-4">
             <Link to='/'><li className="hover:text-cyan-50 cursor-pointer">Home</li></Link>
-            <Link to='/about'><li className="hover:text-cyan-50 cursor-pointer">About</li></Link>
-            <Link to='/'><li className="hover:text-cyan-50 cursor-pointer">Blog</li></Link>
-            <Link to='/ContactUs'><li className="hover:text-cyan-50 cursor-pointer">ContactUs</li></Link>
+            <Link to='/pending'><li className="hover:text-cyan-50 cursor-pointer">About</li></Link>
+            <Link to='/pending'><li className="hover:text-cyan-50 cursor-pointer">Blog</li></Link>
+            <Link to='/pending'><li className="hover:text-cyan-50 cursor-pointer">ContactUs</li></Link>
           </ul>
         </div>
       )}
